@@ -7,4 +7,3 @@
 3. lambda
 4. API Gateway
 5. IAM
-
