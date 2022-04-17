@@ -3,7 +3,7 @@ service: serverless-app
 #app: your-app-name
 #org: your-org-name
 
-frameworkVersion: '3'
+frameworkVersion: '2'
 provider:
   name: aws
   runtime: nodejs12.x
@@ -19,7 +19,7 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:ap-northeast-1:*:*"
+      Resource: 'arn:aws:dynamodb:ap-northeast-1:*:*'
 
 functions:
   hello:
@@ -28,7 +28,7 @@ functions:
       - http:
           path: hello
           method: any
-          cors: true  
+          cors: true
 
 resources:
   Resources:
@@ -37,35 +37,32 @@ resources:
       DeletionPolicy: Retain
       Properties:
         AttributeDefinitions:
-          -
-            AttributeName: id
+          - AttributeName: id
             AttributeType: S
         KeySchema:
-          -
-            AttributeName: id
+          - AttributeName: id
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: 'todos'
-
 # statements to the Lambda function's IAM Role
 #  iam:
-  #  role:
-    #  statements:
-      #  - Effect: "Allow"
-        #  Action:
-          #  - "s3:ListBucket"
-        #  Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
-      #  - Effect: "Allow"
-        #  Action:
-          #  - "s3:PutObject"
-        #  Resource:
-          #  Fn::Join:
-            #  - ""
-            #  - - "arn:aws:s3:::"
-              #  - "Ref" : "ServerlessDeploymentBucket"
-              #  - "/*"
+#  role:
+#  statements:
+#  - Effect: "Allow"
+#  Action:
+#  - "s3:ListBucket"
+#  Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
+#  - Effect: "Allow"
+#  Action:
+#  - "s3:PutObject"
+#  Resource:
+#  Fn::Join:
+#  - ""
+#  - - "arn:aws:s3:::"
+#  - "Ref" : "ServerlessDeploymentBucket"
+#  - "/*"
 
 # you can define service wide environment variables here
 #  environment:
