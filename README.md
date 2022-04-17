@@ -1,6 +1,6 @@
 # serverless-app
 
-### 構成
+### 構成（Version）
 
 1. Serverless Framework
 2. node.js
