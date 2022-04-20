@@ -12,4 +12,3 @@ lambda + API gateway + dynamodb の構成で、Serverless Framework の環境構
 4. lambda
 5. API Gateway
 6. IAM
-
