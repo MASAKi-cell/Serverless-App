@@ -2,7 +2,7 @@
 
 ### 目的
 
-lambda + API gateway + dynamodb の構成で、Serverless Framework の環境構築を行う。
+lambda + API gateway + dynamodb の構成で、Serverless Framework の環境構築を行う。 
 
 ### 構成（Version）
 
