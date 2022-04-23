@@ -9,6 +9,8 @@ provider:
   runtime: nodejs12.x
   region: ap-northeast-1
   stage: dev
+  environment:
+  DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -27,7 +29,7 @@ functions:
     events:
       - http:
           path: hello
-          method: any
+          method: get
           cors: true
 
 resources:
@@ -45,7 +47,7 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: 'todos'
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}
 # statements to the Lambda function's IAM Role
 #  iam:
 #  role:
