@@ -9,6 +9,6 @@ lambda + API gateway + dynamodb の構成で、Serverless Framework の環境構
 1. Serverless Framework（Ver: 2.67.0）
 2. aws-cli（Ver: 2.2.35）
 3. node.js（Ver: 12.18.3）
-4. serverless-dynamodb-local 
+4. serverless-dynamodb-local
 5. API Gateway
 6. IAM
