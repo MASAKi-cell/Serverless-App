@@ -12,3 +12,7 @@ lambda + API gateway + dynamodb の構成で、Serverless Framework の環境構
 4. serverless-dynamodb-local
 5. API Gateway
 6. IAM
+
+## 最終成果物
+
+バックエンドの REST-API を構築するところまで。
