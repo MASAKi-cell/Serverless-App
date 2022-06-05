@@ -1,0 +1,24 @@
+{
+  "name": "serverless-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MASAKi-cell/serverless-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MASAKi-cell/serverless-app/issues"
+  },
+  "homepage": "https://github.com/MASAKi-cell/serverless-app#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1148.0",
+    "uuid": "^8.3.2"
+  }
+}
