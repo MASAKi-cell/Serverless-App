@@ -1,13 +1,12 @@
 service: serverless-app
 
-frameworkVersion: '2'
+#frameworkVersion: '2'
+
 provider:
   name: aws
   runtime: nodejs12.x
   region: ap-northeast-1
   stage: dev
-  environment:
-  DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -18,7 +17,7 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: 'arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}'
+      Resource: 'arn:aws:dynamodb:ap-northeast-1:*:*'
 
 functions:
   hello:
@@ -26,7 +25,7 @@ functions:
     events:
       - http:
           path: hello
-          method: get
+          method: any
           cors: true
 
 resources:
@@ -44,7 +43,7 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: ${self:provider.environment.DYNAMODB_TABLE}
+        TableName: 'todos'
 # statements to the Lambda function's IAM Role
 #  iam:
 #  role:
