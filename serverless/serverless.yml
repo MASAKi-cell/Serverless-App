@@ -19,6 +19,10 @@ provider:
         - dynamodb:DeleteItem
       Resource: 'arn:aws:dynamodb:ap-northeast-1:*:*'
 
+plugins:
+  - serverless-dynamodb-local
+  - serverless-offline
+
 functions:
   hello:
     handler: handler.hello
