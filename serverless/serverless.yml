@@ -19,7 +19,7 @@ provider:
         - dynamodb:DeleteItem
       Resource: 'arn:aws:dynamodb:ap-northeast-1:*:*'
 
-ustom:
+custom:
   dynamodb:
     stages:
       - dev  
