@@ -19,10 +19,10 @@
   "homepage": "https://github.com/MASAKi-cell/serverless-app#readme",
   "dependencies": {
     "aws-sdk": "^2.1148.0",
+    "serverless-dynamodb-local": "^0.2.30",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "serverless-dynamodb-local": "^0.2.40",
     "serverless-offline": "^8.8.0"
   }
 }
